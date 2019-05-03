@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>FilterApplication</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>s1</servlet-name>
+		<servlet-class>com.servlet.HelloServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>s1</servlet-name>
+		<url-pattern>/servlet1</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>f2</filter-name>
+		<filter-class>com.servlet.filter.MyFilter2</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>f2</filter-name>
+		<url-pattern>/servlet1</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>f1</filter-name>
+		<filter-class>com.servlet.filter.MyFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>f1</filter-name>
+		<url-pattern>/servlet1</url-pattern>
+	</filter-mapping>
+
+
+</web-app>
